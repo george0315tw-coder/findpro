@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FindPro Open | 免費發布需求，快速媒合專家</title>
+    <meta name="description" content="FindPro Open 是免費專家媒合服務。發布一次性需求，讓水電、家電、洗碗機安裝、系統櫃、居家清潔等專家主動回覆。" />
+    <meta name="keywords" content="找師傅, 專家媒合, 免費發布需求, 水電維修, 家電維修, 洗碗機安裝, 系統櫃, 居家服務" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://findpro.example.com/" />
+    <meta property="og:title" content="FindPro Open | 免費發布需求，快速媒合專家" />
+    <meta property="og:description" content="不用被廣告淹沒。FindPro 幫你把需求說清楚，免費媒合真正能解決問題的專家。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://findpro.example.com/" />
+    <meta property="og:site_name" content="FindPro Open" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FindPro Open",
+        "url": "https://findpro.example.com/",
+        "description": "免費發布需求，快速媒合水電、家電、居家服務與專業顧問。",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://findpro.example.com/#experts",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="FindPro Open 首頁">
+        <span class="brand-mark">F</span>
+        <span>
+          <strong>FindPro Open</strong>
+          <small>免費專家媒合</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="主要導覽">
+        <a href="#ask">AI 找方向</a>
+        <a href="#post">發布需求</a>
+        <a href="#experts">找專家</a>
+        <a href="#board">需求看板</a>
+        <a href="./admin.html">後台</a>
+      </nav>
+      <div class="top-actions">
+        <button class="ghost-btn" id="openAuthModal" type="button">登入 / 註冊</button>
+        <button class="ghost-btn" id="logoutMember" type="button" hidden>登出</button>
+        <button class="secondary-btn" id="openExpertModal" type="button">我是專家 +</button>
+        <button class="ghost-btn admin-only" id="exportLeads" type="button" hidden>匯出名單</button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Open Expert Network</p>
+          <h1>讓真正有需求的人，找到真正能解決問題的專家。</h1>
+          <p class="hero-text">
+            FindPro 是免費的專家媒合服務。你可以先用 AI 釐清問題，再把一次性需求說清楚；系統會依照分類、地區與關鍵字，幫你找到更接近、也更願意回覆的專家。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#post">我要發布需求</a>
+            <a class="secondary-btn" href="#experts">搜尋媒合專家</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel" aria-label="平台數據與使用流程">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <span>目前待解決需求</span>
+              <strong id="heroRequestCount">128+</strong>
+            </div>
+            <div class="stat-card">
+              <span>FindPro 已註冊專家數</span>
+              <strong id="heroExpertCount">2,460+</strong>
+            </div>
+          </div>
+          <div class="flow-card">
+            <h2>FindPro 使用方式</h2>
+            <div class="flow-strip">
+              <span><b>1</b>問問 AI 建議</span>
+              <span><b>2</b>提出需求</span>
+              <span><b>3</b>專家媒合回覆</span>
+              <span><b>4</b>雙方聯繫</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="workbench" id="booking">
+        <div class="section-head">
+          <p class="eyebrow">Privacy-Safe Booking</p>
+          <h2>預約與媒合路徑</h2>
+        </div>
+        <div class="process-grid">
+          <article class="process-card">
+            <span>1</span>
+            <h3>客戶提出需求</h3>
+            <p>不用到處翻廣告或問朋友，直接把你遇到的問題、所在區域和方便時段寫下來。FindPro 會把需求整理成清楚摘要，讓適合的專家看得懂、回得快。</p>
+          </article>
+          <article class="process-card">
+            <span>2</span>
+            <h3>專家表達可協助</h3>
+            <p>有能力處理的專家看到案件後，可以主動表達「我可以幫忙」。你不用一通通打電話碰運氣，先讓真正有興趣的專家靠近你。</p>
+          </article>
+          <article class="process-card">
+            <span>3</span>
+            <h3>雙方同意媒合</h3>
+            <p>不是誰都能直接看到你的聯絡資訊。當你覺得這位專家合適、專家也願意承接，FindPro 才協助開啟下一步聯繫，讓媒合更安心。</p>
+          </article>
+          <article class="process-card">
+            <span>4</span>
+            <h3>確認預約</h3>
+            <p>雙方確認服務內容、時間與報價後，就能安排到府或線上協助。FindPro 不抽成交手續費，讓你把重點放在問題被好好解決。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workbench" id="ask">
+        <div class="section-head">
+          <p class="eyebrow">AI Search</p>
+          <h2>先判斷問題，再決定要不要找人</h2>
+        </div>
+        <div class="two-col">
+          <form class="panel" id="aiForm">
+            <label for="aiQuestion">描述你的問題</label>
+            <textarea id="aiQuestion" name="aiQuestion" rows="5" placeholder="例如：系統櫃已做好，想加裝洗碗機，需要改水電、切櫃體，該找誰？"></textarea>
+            <button class="primary-btn" type="submit">取得 AI 建議</button>
+          </form>
+          <article class="panel result" id="aiResult" aria-live="polite">
+            <h3>AI 建議會顯示在這裡</h3>
+            <p>輸入問題後，系統會幫你拆解可能需要的服務、準備資料、風險提醒與推薦分類。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workbench" id="post">
+        <div class="section-head">
+          <p class="eyebrow">Customer Request</p>
+          <h2>公開一次性需求</h2>
+          <p class="section-desc">快速註冊後即可發布需求；會員聯絡資料不公開，只用於 FindPro 免費媒合與後續通知。</p>
+        </div>
+        <form class="request-form panel" id="requestForm">
+          <div class="request-form-grid">
+            <label class="request-title-field">
+              需求標題
+              <input name="title" required placeholder="例如：台北中山區洗碗機安裝與櫃體微調" />
+            </label>
+            <label>
+              服務分類
+              <select name="category" required id="requestCategory"></select>
+            </label>
+          </div>
+
+          <fieldset class="field-group request-section">
+            <legend>服務地區</legend>
+            <div class="inline-fields">
+              <label>
+                縣市
+                <select name="city" id="requestCity" required></select>
+              </label>
+              <label>
+                區域
+                <select name="district" id="requestDistrict" required></select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field-group request-section">
+            <legend>希望服務時間</legend>
+            <div class="inline-fields">
+              <label>
+                星期
+                <select name="weekday" required>
+                  <option value="">請選擇星期</option>
+                  <option value="週一">週一</option>
+                  <option value="週二">週二</option>
+                  <option value="週三">週三</option>
+                  <option value="週四">週四</option>
+                  <option value="週五">週五</option>
+                  <option value="週六">週六</option>
+                  <option value="週日">週日</option>
+                </select>
+              </label>
+              <label>
+                時段
+                <select name="timeSlot" required>
+                  <option value="">請選擇時段</option>
+                  <option value="上午 9:00-12:00">上午 9:00-12:00</option>
+                  <option value="下午 12:00-15:00">下午 12:00-15:00</option>
+                  <option value="下午 15:00-18:00">下午 15:00-18:00</option>
+                  <option value="晚上 18:00-21:00">晚上 18:00-21:00</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field-group contact-group request-section">
+            <legend>聯絡方式 <span>可沿用會員資料，也可補充其他聯絡方式；公開頁不顯示</span></legend>
+            <div class="contact-fields">
+              <label>
+                Email
+                <input name="email" type="email" placeholder="例如：hello@example.com" />
+              </label>
+              <label>
+                LINE
+                <input name="line" placeholder="例如：findpro-line" />
+              </label>
+              <label>
+                電話
+                <input name="phone" type="tel" placeholder="例如：0912-345-678" />
+              </label>
+            </div>
+          </fieldset>
+
+          <label class="request-detail-field">
+            需求細節
+            <textarea name="detail" rows="5" required placeholder="請描述現場狀況、尺寸、照片可否提供、是否需要到府、你最在意的結果。"></textarea>
+          </label>
+          <button class="primary-btn" type="submit">發布並取得推薦專家</button>
+        </form>
+      </section>
+
+      <section class="workbench" id="experts">
+        <div class="section-head">
+          <p class="eyebrow">Marketplace</p>
+          <h2>找專家</h2>
+          <p class="section-desc">先描述需求與條件，系統幫你找出合適專家；確認要邀請時，再發布需求並留下聯絡方式。</p>
+        </div>
+        <form class="match-panel panel" id="expertMatchForm">
+          <section class="match-field-card">
+            <div class="match-card-head">
+              <span>01</span>
+              <h3>服務分類</h3>
+            </div>
+            <label>
+              選擇需求類型
+              <select name="category" id="matchCategory"></select>
+            </label>
+          </section>
+          <section class="match-field-card">
+            <div class="match-card-head">
+              <span>02</span>
+              <h3>服務地區</h3>
+            </div>
+            <div class="inline-fields">
+              <label>
+                縣市
+                <select name="city" id="matchCity"></select>
+              </label>
+              <label>
+                區域
+                <select name="district" id="matchDistrict"></select>
+              </label>
+            </div>
+          </section>
+          <section class="match-field-card">
+            <div class="match-card-head">
+              <span>03</span>
+              <h3>希望服務時段</h3>
+            </div>
+            <div class="inline-fields">
+              <label>
+                星期
+                <select name="weekday">
+                  <option value="不限">不限</option>
+                  <option value="週一">週一</option>
+                  <option value="週二">週二</option>
+                  <option value="週三">週三</option>
+                  <option value="週四">週四</option>
+                  <option value="週五">週五</option>
+                  <option value="週六">週六</option>
+                  <option value="週日">週日</option>
+                </select>
+              </label>
+              <label>
+                時間
+                <select name="timeSlot">
+                  <option value="不限">不限</option>
+                  <option value="上午 9:00-12:00">上午 9:00-12:00</option>
+                  <option value="下午 12:00-15:00">下午 12:00-15:00</option>
+                  <option value="下午 15:00-18:00">下午 15:00-18:00</option>
+                  <option value="晚上 18:00-21:00">晚上 18:00-21:00</option>
+                </select>
+              </label>
+            </div>
+          </section>
+          <section class="match-field-card match-field-wide">
+            <div class="match-card-head">
+              <span>04</span>
+              <h3>多描述問題與需求</h3>
+            </div>
+            <label>
+              補充現場狀況、尺寸、限制或希望結果
+              <textarea id="matchNeed" name="need" rows="4" placeholder="例如：我想在台北中山區加裝洗碗機，需要確認水電、排水與系統櫃裁切。"></textarea>
+            </label>
+          </section>
+          <button class="primary-btn" type="submit">搜尋媒合專家</button>
+        </form>
+        <div class="match-summary" id="matchSummary" aria-live="polite">
+          先選擇服務分類、地區與希望時段，再補充需求描述，FindPro 會依條件與關鍵字推薦專家。
+        </div>
+        <div class="cards" id="expertList"></div>
+      </section>
+
+      <section class="workbench" id="board">
+        <div class="section-head row-head">
+          <div>
+            <p class="eyebrow">Open Leads</p>
+            <h2>目前待解決的線上需求</h2>
+            <p class="section-desc">這裡只顯示匿名需求摘要。專家送出可協助意願後，需由顧客或 FindPro 確認，才會開通後續聯繫。</p>
+          </div>
+          <select id="requestFilter"></select>
+        </div>
+        <div class="cards" id="requestList"></div>
+      </section>
+
+      <section class="workbench policy-section" id="privacy">
+        <div class="section-head">
+          <p class="eyebrow">Privacy Notice</p>
+          <h2>隱私權政策 / 個資蒐集告知</h2>
+          <p class="section-desc">FindPro 只在媒合服務必要範圍內蒐集資料；公開頁面不顯示電話、Email、LINE ID 等私人聯絡方式。</p>
+        </div>
+        <div class="policy-grid">
+          <article class="policy-card">
+            <h3>蒐集目的</h3>
+            <p>用於建立顧客需求、專家媒合、站內通知、案件追蹤、服務品質回訪，以及經你獨立同意後的活動或廣告刊登資訊通知。</p>
+          </article>
+          <article class="policy-card">
+            <h3>蒐集類別</h3>
+            <p>需求內容、服務地區、希望時段、Email、LINE ID、電話、送出時間、同意紀錄、媒合狀態與系統必要紀錄。</p>
+          </article>
+          <article class="policy-card">
+            <h3>利用期間、地區、對象與方式</h3>
+            <p>資料保存於服務營運必要期間，主要於台灣地區使用；必要時提供給經媒合流程選定或審核通過的專家，用於聯繫與報價。</p>
+          </article>
+          <article class="policy-card">
+            <h3>你的權利</h3>
+            <p>你可請求查詢、閱覽、製給複製本、補充、更正、停止蒐集處理利用或刪除。若不提供必要聯絡資料，FindPro 將無法完成媒合通知。</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal" id="expertModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="expertModalTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow">Expert Signup</p>
+            <h2 id="expertModalTitle">專家建立服務檔案</h2>
+          </div>
+          <button class="icon-btn" type="button" data-close-modal aria-label="關閉專家建檔">×</button>
+        </div>
+        <form class="expert-profile-form" id="expertForm">
+          <section class="expert-form-card">
+            <div class="expert-card-head">
+              <span>01</span>
+              <h3>基本資料</h3>
+            </div>
+            <div class="expert-card-grid">
+              <label>
+                專家/店家名稱
+                <input name="name" required placeholder="例如：阿宏水電與廚具安裝" />
+              </label>
+              <label>
+                主要服務
+                <select name="category" required id="signupCategory"></select>
+              </label>
+            </div>
+          </section>
+
+          <section class="expert-form-card expert-form-wide">
+            <div class="expert-card-head">
+              <span>02</span>
+              <h3>服務範圍</h3>
+            </div>
+            <div class="service-area-builder">
+              <label>
+                縣市
+                <select name="city" id="expertCity" required></select>
+              </label>
+              <div class="area-picker" id="expertAreaPicker" aria-live="polite">
+                <p class="muted">請先選擇縣市，再勾選可服務區域。</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="expert-form-card">
+            <div class="expert-card-head">
+              <span>03</span>
+              <h3>媒合聯絡</h3>
+            </div>
+            <p class="form-note">以下資料不公開，只用於 FindPro 媒合通知。Email、LINE ID、電話至少填一個。</p>
+            <div class="expert-contact-row">
+              <label>
+                Email
+                <input name="expertEmail" type="email" placeholder="例如：hello@example.com" />
+              </label>
+              <label>
+                LINE ID
+                <input name="expertLine" placeholder="例如：findpro-pro" />
+              </label>
+              <label>
+                電話
+                <input name="expertPhone" type="tel" placeholder="例如：0912-345-678" />
+              </label>
+            </div>
+            <div class="expert-service-row">
+              <label>
+                可服務方式
+                <select name="mode" required>
+                  <option value="到府服務">到府服務</option>
+                  <option value="遠端諮詢">遠端諮詢</option>
+                  <option value="到府與遠端皆可">到府與遠端皆可</option>
+                </select>
+              </label>
+              <label>
+                起始價格
+                <input name="price" required placeholder="例如：場勘 $800 起、依案件報價" />
+              </label>
+            </div>
+          </section>
+
+          <section class="expert-form-card expert-form-wide">
+            <div class="expert-card-head">
+              <span>04</span>
+              <h3>專長與說明</h3>
+            </div>
+            <label>
+              服務特色、常解決的問題、經驗與可配合時間
+              <textarea name="bio" rows="5" required placeholder="寫出你最常解決的問題、經驗、證照、可配合時間。"></textarea>
+            </label>
+          </section>
+
+          <button class="primary-btn" type="submit">儲存服務檔案</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="modal" id="leadConsentModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-lead-modal></div>
+      <section class="modal-card consent-card" role="dialog" aria-modal="true" aria-labelledby="leadConsentTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow">Customer Data</p>
+            <h2 id="leadConsentTitle">確認資料蒐集與媒合使用</h2>
+          </div>
+          <button class="icon-btn" type="button" data-close-lead-modal aria-label="關閉資料蒐集確認">×</button>
+        </div>
+        <div class="consent-summary" id="leadConsentSummary"></div>
+        <div class="consent-notice">
+          <h3>個資蒐集告知</h3>
+          <p>FindPro 會使用你填寫的需求、地區、時段與聯絡方式進行案件媒合與站內通知；公開頁面不會顯示私人聯絡資訊。若不同意服務必要個資使用，將無法發布需求。</p>
+        </div>
+        <label class="check-line">
+          <input id="privacyConsent" type="checkbox" />
+          <span>我已閱讀並同意 <a class="text-link" href="./privacy.html" target="_blank" rel="noreferrer">隱私權政策 / 個資蒐集告知</a>，用於需求發布與專家媒合。</span>
+        </label>
+        <label class="check-line">
+          <input id="marketingConsent" type="checkbox" />
+          <span>我同意接收服務更新、專家推薦與優惠活動通知。此項可不勾選。</span>
+        </label>
+        <div class="consent-actions">
+          <button class="secondary-btn" type="button" data-close-lead-modal>返回修改</button>
+          <button class="primary-btn" id="confirmLeadConsent" type="button">同意並發布需求</button>
+        </div>
+        <p class="label-hint compact-hint">送出後會保存同意版本、時間與行銷同意狀態。</p>
+      </section>
+    </div>
+
+    <div class="modal" id="authModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-auth-modal></div>
+      <section class="modal-card auth-card" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow">Member</p>
+            <h2 id="authModalTitle">註冊 FindPro</h2>
+            <p class="form-note" id="authPurpose">請用 Email 建立會員，之後再補 LINE、電話與其他資料。</p>
+          </div>
+          <button class="icon-btn" type="button" data-close-auth-modal aria-label="關閉會員登入">×</button>
+        </div>
+        <form class="auth-form" id="authForm">
+          <label>
+            電子郵件
+            <input name="email" type="email" required placeholder="輸入電子郵件" autocomplete="email" />
+          </label>
+          <label>
+            密碼
+            <input name="password" type="password" required placeholder="輸入密碼" autocomplete="current-password" />
+          </label>
+          <ul class="password-rules" aria-label="密碼規則">
+            <li>長度需為 6-18 個字元</li>
+            <li>包含 1 個英文字母</li>
+            <li>包含 1 個數字</li>
+          </ul>
+          <button class="primary-btn" type="submit">註冊 / 登入</button>
+        </form>
+        <p class="auth-switch">已有帳號？<span>輸入同一組 Email 與密碼即可登入</span></p>
+        <p class="label-hint compact-hint">MVP 階段先用簡易會員紀錄，正式上線請改成 Email 驗證與後端加密密碼。</p>
+      </section>
+    </div>
+
+    <div class="modal" id="memberProfileModal" aria-hidden="true">
+      <div class="modal-backdrop" data-close-profile-modal></div>
+      <section class="modal-card profile-card" role="dialog" aria-modal="true" aria-labelledby="memberProfileTitle">
+        <div class="modal-head">
+          <div>
+            <p class="eyebrow">Member Profile</p>
+            <h2 id="memberProfileTitle">會員資料</h2>
+            <p class="form-note">補上手機、LINE 與地址，FindPro 後續媒合與通知會更完整。</p>
+          </div>
+          <button class="icon-btn" type="button" data-close-profile-modal aria-label="關閉會員資料">×</button>
+        </div>
+        <form class="member-profile-form" id="memberProfileForm">
+          <label class="profile-wide">
+            會員 Email
+            <input name="email" type="email" readonly />
+          </label>
+          <div class="profile-grid">
+            <label>
+              姓名 / 稱呼
+              <input name="displayName" placeholder="例如：王先生、Amy" />
+            </label>
+            <label>
+              手機
+              <input name="phone" type="tel" placeholder="例如：0912-345-678" />
+            </label>
+            <label>
+              LINE ID
+              <input name="line" placeholder="例如：findpro-line" />
+            </label>
+            <label>
+              聯絡地址
+              <input name="address" placeholder="例如：台北市中山區" />
+            </label>
+          </div>
+          <button class="primary-btn" type="submit">儲存會員資料</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
