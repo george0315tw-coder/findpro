@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FindPro Open 後台 | 名單與需求管理</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./index.html#home" aria-label="FindPro Open 首頁">
+        <span class="brand-mark">F</span>
+        <span>
+          <strong>FindPro Admin</strong>
+          <small>名單與需求管理</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="後台導覽">
+        <a href="./index.html#post">前台發布需求</a>
+        <a href="./index.html#experts">找專家</a>
+        <a href="./index.html#board">需求看板</a>
+      </nav>
+      <div class="top-actions">
+        <button class="secondary-btn" id="adminExport" type="button">匯出 JSON</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="workbench">
+        <div class="section-head">
+          <p class="eyebrow">Admin Dashboard</p>
+          <h1>FindPro 後台資料中心</h1>
+          <p class="section-desc">這是正式後台雛形。目前讀取本機 MVP 資料；正式上線時會改為資料庫登入、權限控管與即時案件管理。</p>
+        </div>
+
+        <div class="admin-stats" id="adminStats"></div>
+
+        <div class="admin-tabs" role="tablist" aria-label="後台資料切換">
+          <button class="small-btn is-active" type="button" data-admin-tab="requests">顧客需求</button>
+          <button class="small-btn" type="button" data-admin-tab="experts">專家名單</button>
+          <button class="small-btn" type="button" data-admin-tab="matches">媒合追蹤</button>
+          <button class="small-btn" type="button" data-admin-tab="members">會員後台</button>
+        </div>
+
+        <section class="admin-panel panel" id="adminRequestsPanel">
+          <div class="section-head row-head">
+            <div>
+              <p class="eyebrow">Customer Leads</p>
+              <h2>顧客需求名單</h2>
+              <p class="section-desc">用來追蹤每一筆需求、聯絡方式、個資同意與案件狀態。</p>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table" id="requestTable"></table>
+          </div>
+        </section>
+
+        <section class="admin-panel panel" id="adminExpertsPanel" hidden>
+          <div class="section-head">
+            <p class="eyebrow">Experts</p>
+            <h2>專家服務檔案</h2>
+            <p class="section-desc">管理專家服務項目、服務地區、聯絡管道與未來可收費曝光狀態。</p>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table" id="expertTable"></table>
+          </div>
+        </section>
+
+        <section class="admin-panel panel" id="adminMatchesPanel" hidden>
+          <div class="section-head">
+            <p class="eyebrow">Match Pipeline</p>
+            <h2>媒合流程追蹤</h2>
+            <p class="section-desc">追蹤顧客邀請、專家表達可協助、顧客確認與聯繫開通狀態，讓每一筆名單都有清楚路徑。</p>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table" id="matchTable"></table>
+          </div>
+        </section>
+
+        <section class="admin-panel panel" id="adminMembersPanel" hidden>
+          <div class="section-head">
+            <p class="eyebrow">Member Console</p>
+            <h2>會員後台規劃</h2>
+            <p class="section-desc">正式版會有顧客會員與專家會員。顧客可管理需求與聯絡授權，專家可購買名單、曝光方案並追蹤接案狀態。</p>
+          </div>
+          <div class="member-plan-grid">
+            <article class="policy-card">
+              <h3>顧客會員</h3>
+              <p>查看已發布需求、收到哪些專家回覆、選擇是否開啟聯絡、管理個資與行銷同意。</p>
+            </article>
+            <article class="policy-card">
+              <h3>專家會員</h3>
+              <p>管理服務檔案、服務地區、報價資訊、聯絡資料、可購買的名單與曝光方案。</p>
+            </article>
+            <article class="policy-card">
+              <h3>名單商品化</h3>
+              <p>將需求依分類、地區、急迫性與聯絡完整度分級，未來可做單筆名單、訂閱或曝光加值。</p>
+            </article>
+          </div>
+          <div class="table-wrap">
+            <table class="admin-table" id="memberTable"></table>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="./admin.js"></script>
+  </body>
+</html>
