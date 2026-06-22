@@ -1,0 +1,9 @@
+{
+  "name": "findpro-open",
+  "version": "0.1.0",
+  "private": true,
+  "description": "FindPro Open static MVP",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
