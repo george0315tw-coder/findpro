@@ -1,0 +1,6 @@
+entrypoint = "index.html"
+run = "node server.js"
+
+[deployment]
+run = ["sh", "-c", "node server.js"]
+deploymentTarget = "cloudrun"
